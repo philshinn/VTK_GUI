@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flowchart Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="sidebar">
+      <div class="widget" draggable="true" data-type="start">
+        <svg class="widget-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" stroke="#0d47a1" stroke-width="5" fill="#4caf50" />
+        </svg><span>Start</span>
+      </div>
+      <div class="widget" draggable="true" data-type="stop">
+        <svg class="widget-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" stroke="#0d47a1" stroke-width="5" fill="#4caf50" />
+        </svg><span>Stop</span>
+      </div>
+      <div class="widget" draggable="true" data-type="decision">
+        <svg class="widget-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <polygon points="50,0 100,50 50,100 0,50" style="fill:#2196f3;stroke:#0d47a1;stroke-width:5" />
+        </svg><span>Decision</span>
+      </div>
+      <div class="widget" draggable="true" data-type="input">
+        <svg class="widget-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <rect x="10" y="30" width="80" height="40" rx="10" fill="#03a9f4" stroke="#01579b" stroke-width="5"/>
+        </svg><span>Input</span>
+      </div>
+      <div class="widget" draggable="true" data-type="output">
+        <svg class="widget-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <rect x="10" y="30" width="80" height="40" rx="10" fill="#03a9f4" stroke="#01579b" stroke-width="5"/>
+        </svg><span>Output</span>
+      </div>
+    </div>
+    <div id="canvas">
+  <svg id="connections-layer" width="100%" height="100%">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5"
+              markerWidth="6" markerHeight="6"
+              orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+      </marker>
+    </defs>
+  </svg>
+</div>
+</div>
+<button onclick="saveDiagram()">💾 Save</button>
+<input type="file" id="loadFile" />
+  </div>
+  <script src="script.js"></script>
+<script>
+document.getElementById("loadFile").addEventListener("change", function() {
+  if (this.files[0]) loadDiagramFromFile(this.files[0]);
+});
+</script>
+</body>
+</html>

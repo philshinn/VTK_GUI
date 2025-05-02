@@ -1,0 +1,131 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+#container {
+  display: flex;
+  height: 100vh;
+}
+#sidebar {
+  width: 200px;
+  background: #f3f3f3;
+  padding: 10px;
+  border-right: 2px solid #ccc;
+  box-sizing: border-box;
+}
+.widget {
+  background: #ffffff;
+  border: 1px solid #aaa;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: grab;
+  text-align: center;
+}
+.widget-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+#canvas {
+  flex: 1;
+  position: relative;
+  background-color: #f9f9f9;
+  overflow: auto;
+}
+.node {
+  position: absolute;
+  resize: both;
+  overflow: auto;
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  padding: 10px;
+}
+.connection-line {
+  position: absolute;
+  height: 2px;
+  background-color: black;
+  transform-origin: 0 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.arrowhead {
+  width: 0;
+  height: 0;
+  border-left: 10px solid black;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  z-index: 2;
+}
+.connection-label {
+  position: absolute;
+  background: #fff;
+  padding: 2px 6px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  user-select: text;
+  cursor: text;
+  z-index: 3;
+}
+
+.arrowhead {
+  width: 0;
+  height: 0;
+  border-left: 10px solid black;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  transform-origin: center center;
+  z-index: 2;
+}
+
+#canvas {
+  position: relative;
+  z-index: 1;
+}
+#svg-canvas {
+  z-index: 0;
+}
+
+#canvas-container {
+  position: relative;
+  flex: 1;
+}
+#svg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+#canvas {
+  position: relative;
+  flex: 1;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+#connections-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.node {
+  position: absolute;
+  z-index: 1;
+}
